@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<title>Product Details</title>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    div.polaroid {
+      width: 950px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+    }
+
+    div.container {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h5 *ngIf='loading'>
+    <center><img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" 
+        alt="this slowpoke moves" width="250" alt="404 image" /></center>
+  </h5>
+  <div class="container">
+
+
+
+    <div class="polaroid" *ngFor="let deal of publicDeals">
+      <div *ngIf='deal.id==data1'>
+        <img [src]="deal.image" id="img1" class="img-thumbnail" *ngIf="!isImageLoading;">
+        <h3><p id="demo"></p></h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a [routerLink]="['/buy']"
+          routerLinkActive="active"><button class='btn-danger'>BUY</button></a>&nbsp;&nbsp;<a
+          [routerLink]="['/dealsdetails',deal.id]" routerLinkActive="active"><button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+          </button></a><b><font color='red'>&nbsp;Left Item:</font></b>{{deal.leftitem}} Hurry Up!<br><br>
+        <a [routerLink]="['/']" routerLinkActive="active"><button class='btn-secondary'>Back To Deals</button></a>
+        
+        <center>
+          <h3> {{deal.name}}<br></h3>
+          <font color='red'>From-</font>
+          Original price:<del>{{deal.originalPrice | currency:'INR'}}</del>&nbsp;&nbsp;To-
+          Sale:{{deal.salePrice | currency:'INR'}}
+          <h5>Description</h5>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{deal.description }}
+        </center>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

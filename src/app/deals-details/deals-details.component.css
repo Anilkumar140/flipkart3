@@ -1,0 +1,17 @@
+#img1 {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    width: 400px;
+  }
+  #img2 {
+    
+    border-radius: 8px;
+    padding: 5px;
+    width: 400px;
+  }
+  #example3 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px red;
+  }
