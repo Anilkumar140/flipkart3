@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Host } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Deal } from '../deal';
 // We haven't defined these services yet
@@ -21,7 +21,8 @@ export class PublicDealsComponent implements OnInit, OnDestroy {
   // Note: We haven't implemented the Deal or Auth Services yet.
   constructor(
     public dealService: DealService,
-    public spinnerService: SpinnerService
+    public spinnerService: SpinnerService,
+    
   
     // public authService: AuthService
   ) { }

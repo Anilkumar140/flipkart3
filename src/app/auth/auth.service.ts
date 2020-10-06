@@ -77,7 +77,7 @@ export class AuthService {
     // Ensure that returnTo URL is specified in Auth0
     // Application settings for Allowed Logout URLs
     this.auth0.logout({
-      returnTo: 'https://dealsappdeal.web.app',
+      returnTo: 'https://flipkartcloney.herokuapp.com/',
       clientID: environment.auth.clientID
     });
   }
